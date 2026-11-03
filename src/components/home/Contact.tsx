@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import { Copy, Mail } from "lucide-react";
 import { CONTACT_ENDPOINT, links, person } from "@/content/site";
 import { Reveal } from "@/components/ui";
+import { ResumeButton } from "@/components/ResumeButton";
 
 import { validate, type Fields, type Errors } from "@/lib/contact";
 
@@ -118,6 +119,7 @@ export function Contact() {
               <button type="button" onClick={copy} className="inline-flex items-center gap-2 rounded-full border border-white/25 px-5 py-3 font-mono text-[11px] tracking-[0.16em] uppercase hover:border-white">
                 <Copy size={14} /> Copy email
               </button>
+              <ResumeButton />
               <a href={links.github} target="_blank" rel="noopener noreferrer" className="rounded-full border border-white/25 px-5 py-3 font-mono text-[11px] tracking-[0.16em] uppercase hover:border-white">GitHub ↗</a>
               <a href={links.linkedin} target="_blank" rel="noopener noreferrer" className="rounded-full border border-white/25 px-5 py-3 font-mono text-[11px] tracking-[0.16em] uppercase hover:border-white">LinkedIn ↗</a>
             </div>

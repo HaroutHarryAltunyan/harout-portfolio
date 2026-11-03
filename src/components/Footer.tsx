@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { links } from "@/content/site";
+import { ResumeButton } from "@/components/ResumeButton";
 
 const cols = [
   {
@@ -47,7 +48,10 @@ export function Footer() {
         </p>
         <div className="mt-8 flex flex-wrap items-end justify-between gap-6">
           <p className="font-mono text-xs tracking-[0.2em] text-silver uppercase">Founder. Engineer. Architect.</p>
-          <p className="font-display text-lg">Building what&apos;s next.</p>
+          <div className="flex flex-wrap items-center gap-4">
+            <p className="font-display text-lg">Building what&apos;s next.</p>
+            <ResumeButton variant="solid" />
+          </div>
         </div>
         <div className="hairline my-12" />
         <div className="grid gap-10 sm:grid-cols-3">

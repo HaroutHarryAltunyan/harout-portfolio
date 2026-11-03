@@ -4,7 +4,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import { nav } from "@/content/site";
+import { nav, RESUME_FILE } from "@/content/site";
+import { asset } from "@/lib/asset";
+import { Download } from "lucide-react";
 
 export function Nav() {
   const pathname = usePathname();
@@ -80,12 +82,18 @@ export function Nav() {
           </ul>
         </nav>
 
-        <Link
-          href="/#contact"
-          className="hidden rounded-full bg-white px-4 py-2 text-[13px] font-medium text-obsidian transition-transform hover:scale-[1.03] md:inline-flex"
-        >
-          Let&apos;s connect
-        </Link>
+        <div className="hidden items-center gap-2 md:flex">
+          <a
+            href={asset(RESUME_FILE)}
+            download="Harout_Altunyan_Resume.pdf"
+            className="inline-flex items-center gap-1.5 rounded-full border border-white/20 px-3.5 py-2 text-[13px] transition-colors hover:border-white"
+          >
+            <Download size={14} aria-hidden /> Resume<span className="sr-only"> (PDF download)</span>
+          </a>
+          <Link href="/#contact" className="rounded-full bg-white px-4 py-2 text-[13px] font-medium text-obsidian transition-transform hover:scale-[1.03]">
+            Let&apos;s connect
+          </Link>
+        </div>
 
         <button
           type="button"
@@ -119,6 +127,16 @@ export function Nav() {
               </Link>
             </li>
           ))}
+          <li>
+            <a
+              href={asset(RESUME_FILE)}
+              download="Harout_Altunyan_Resume.pdf"
+              onClick={() => setOpen(false)}
+              className="flex min-h-12 items-center justify-between rounded-2xl px-4 font-display text-lg"
+            >
+              Download resume <Download size={18} aria-hidden />
+            </a>
+          </li>
         </ul>
       </div>
     </header>

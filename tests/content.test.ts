@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { ventures, saecula, hyelynk } from "@/content/ventures";
 import { archive } from "@/content/projects";
-import { links, person } from "@/content/site";
+import { links, person, RESUME_FILE } from "@/content/site";
 import { validate } from "@/lib/contact";
 import { existsSync } from "node:fs";
 import { creative } from "@/content/expertise";
@@ -44,6 +44,10 @@ describe("content accuracy guards", () => {
   it("archive projects list the full set without fake demo links", () => {
     expect(archive).toHaveLength(11);
     for (const p of archive) expect(p.demo).toBeUndefined();
+  });
+
+  it("the downloadable resume exists", () => {
+    expect(existsSync(`public${RESUME_FILE}`)).toBe(true);
   });
 
   it("external links are https", () => {

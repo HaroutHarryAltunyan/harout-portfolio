@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import { NeuralField } from "@/components/three/lazy";
 import { person, links } from "@/content/site";
 import { img } from "@/lib/asset";
+import { ResumeButton } from "@/components/ResumeButton";
 
 export function Hero() {
   const ref = useRef<HTMLElement>(null);
@@ -62,6 +63,7 @@ export function Hero() {
             <Link href="/#contact" className="rounded-full border border-white/25 px-6 py-3.5 font-mono text-[12px] tracking-[0.16em] uppercase transition-colors hover:border-white">
               Let&apos;s connect
             </Link>
+            <ResumeButton className="py-3.5 text-[12px]" />
             <span className="ml-1 flex gap-4 text-sm text-silver">
               <a href={links.github} target="_blank" rel="noopener noreferrer" className="hover:text-white">GitHub ↗</a>
               <a href={links.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-white">LinkedIn ↗</a>

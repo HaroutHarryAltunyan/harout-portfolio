@@ -27,6 +27,9 @@ export const links = {
   philly: "https://phillyontheblock.com",
 };
 
+/** PDF in public/. Regenerate from the resume build and copy here when the resume changes. */
+export const RESUME_FILE = "/Harout_Altunyan_Resume.pdf";
+
 export const nav = [
   { label: "Home", href: "/#top", id: "top" },
   { label: "About", href: "/#about", id: "about" },
