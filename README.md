@@ -5,7 +5,9 @@ Personal portfolio / resume site.
 - `index.html` — the whole page (inline CSS + JS, Google Fonts)
 - `img/` — portrait, SAECULA app screenshot, SAECULA campaign visual
 
-Preview published on claude.ai: https://claude.ai/artifact/3LFSMdS5ETPfZ5FGe6wMy2
+Live site: https://haroutharryaltunyan.github.io/harout-portfolio/ (GitHub Pages, deploys from `main`)
+
+Preview on claude.ai: https://claude.ai/artifact/3LFSMdS5ETPfZ5FGe6wMy2
 
 ## Run locally
 
