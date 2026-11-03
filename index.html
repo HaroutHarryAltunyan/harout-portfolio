@@ -1,0 +1,612 @@
+<title>Harout Altunyan</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Harout Altunyan: Co-Founder & CTO of SAECULA. Founder of HyeLynk. Full-stack architect building AI-powered health and community platforms.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a long single-column dossier. Hero with portrait, a career timeline, then a project
+   ledger where each venture gets real repo facts, capability blocks and its stack. */
+:root {
+  --bg: #f3f5f8;
+  --surface: #ffffff;
+  --fg: #0f1a2b;
+  --muted: #536077;
+  --line: #d9dfe8;
+  --accent: #b86e00;      /* amber, from the SAECULA campaign headline */
+  --accent-2: #0f7a96;    /* cyan, from the SAECULA wordmark */
+  --chip: #e8edf4;
+  --media: #0b1220;
+  --display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", sans-serif;
+  --body: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0a111d; --surface: #111a2a; --fg: #e8edf5; --muted: #95a2b8; --line: #223049;
+    --accent: #f2b544; --accent-2: #5fd0ea; --chip: #18243a; --media: #070c16; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0a111d; --surface: #111a2a; --fg: #e8edf5; --muted: #95a2b8; --line: #223049;
+  --accent: #f2b544; --accent-2: #5fd0ea; --chip: #18243a; --media: #070c16; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--fg);
+  font: 400 16px/1.6 var(--body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  -webkit-font-smoothing: antialiased;
+}
+.wrap { max-width: 1040px; margin: 0 auto; }
+a { color: inherit; text-decoration-color: var(--accent); text-underline-offset: 3px; }
+a:hover { color: var(--accent); }
+:focus-visible { outline: 2px solid var(--accent-2); outline-offset: 3px; border-radius: 4px; }
+h1, h2, h3, h4 { font-family: var(--display); text-wrap: balance; margin: 0; line-height: 1.1; }
+p { margin: 0; }
+ul { margin: 0; padding: 0; list-style: none; }
+.label { font: 500 12px/1.2 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+
+/* top bar */
+.top {
+  display: flex; justify-content: space-between; align-items: center; gap: 12px 16px; flex-wrap: wrap;
+  padding-block: 22px; border-bottom: 1px solid var(--line);
+}
+.top .mark { font: 700 18px/1 var(--display); letter-spacing: -.01em; text-decoration: none; }
+.top nav { display: flex; gap: 6px 20px; flex-wrap: wrap; font-size: 14px; }
+.top nav a { text-decoration: none; color: var(--muted); }
+.top nav a:hover { color: var(--fg); }
+
+/* hero */
+.hero {
+  display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 48px; align-items: center;
+  padding-block: 64px 56px;
+}
+.hero h1 { font-size: clamp(40px, 6.4vw, 76px); font-weight: 800; letter-spacing: -.03em; line-height: 1.04; }
+.hero h1 em { font-style: normal; color: var(--accent); }
+.hero .lede { font-size: 19px; color: var(--muted); max-width: 58ch; margin-top: 22px; }
+.hero .who { margin-bottom: 20px; display: flex; gap: 10px 18px; flex-wrap: wrap; }
+.portrait {
+  width: 100%; max-width: 300px; aspect-ratio: 1; object-fit: cover; border-radius: 6px; justify-self: end;
+}
+.actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px; padding: 11px 16px; border-radius: 6px;
+  font: 500 14px/1 var(--body); text-decoration: none; border: 1px solid var(--line);
+  background: var(--surface); color: var(--fg); cursor: pointer;
+}
+.btn:hover { border-color: var(--fg); color: var(--fg); }
+.btn.primary { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.btn.primary:hover { color: var(--bg); opacity: .88; }
+
+/* figures strip */
+.figures { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-block: 1px solid var(--line); }
+.figures div { padding: 22px 20px 22px 0; display: grid; gap: 6px; align-content: start; }
+.figures div + div { padding-left: 20px; border-left: 1px solid var(--line); }
+.figures b { font: 700 34px/1 var(--display); letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+.figures span { font-size: 13px; color: var(--muted); line-height: 1.4; }
+
+/* sections */
+section { padding-block: 80px 8px; scroll-margin-top: 16px; }
+.sec-head { display: flex; align-items: baseline; justify-content: space-between; gap: 8px 16px; flex-wrap: wrap; margin-bottom: 28px; }
+.sec-head h2 { font-size: clamp(28px, 3.6vw, 40px); font-weight: 700; letter-spacing: -.02em; }
+
+/* about */
+.about { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 48px; }
+.about .bio { display: grid; gap: 16px; font-size: 17px; max-width: 64ch; }
+.about .bio p:first-child { font-size: 21px; line-height: 1.5; color: var(--fg); }
+.about .bio p + p { color: var(--muted); }
+.facts { display: grid; gap: 0; border-top: 1px solid var(--line); align-content: start; }
+.facts div { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 12px; padding-block: 13px; border-bottom: 1px solid var(--line); font-size: 15px; }
+.facts dt { color: var(--muted); }
+.facts dd { margin: 0; }
+
+/* experience timeline */
+.timeline { display: grid; gap: 0; border-top: 1px solid var(--line); }
+.job { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 32px; padding-block: 28px; border-bottom: 1px solid var(--line); }
+.job .when { display: grid; gap: 6px; align-content: start; }
+.job .when b { font: 500 14px/1.3 var(--mono); font-variant-numeric: tabular-nums; }
+.job .now { color: var(--accent); font: 500 11px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; }
+.job h3 { font-size: 22px; font-weight: 700; letter-spacing: -.01em; }
+.job .org { color: var(--muted); margin-top: 4px; font-size: 15px; }
+.job ul { margin-top: 14px; display: grid; gap: 8px; max-width: 70ch; }
+.job li { padding-left: 18px; position: relative; color: var(--muted); font-size: 15.5px; }
+.job li::before { content: ""; position: absolute; left: 0; top: .72em; width: 8px; height: 1px; background: var(--accent); }
+
+/* project */
+.project { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.project + .project { margin-top: 28px; }
+.p-head { padding: 32px 32px 0; display: grid; gap: 14px; }
+.p-head .meta { display: flex; gap: 8px 18px; flex-wrap: wrap; }
+.p-head h3 { font-size: clamp(30px, 4vw, 44px); font-weight: 800; letter-spacing: -.025em; }
+.p-head .role { font-weight: 600; display: flex; gap: 8px 16px; flex-wrap: wrap; align-items: baseline; }
+.site { font: 500 14px/1 var(--mono); color: var(--accent-2); text-decoration-color: var(--accent-2); }
+.site:hover { color: var(--accent); }
+.p-head p.desc { color: var(--muted); max-width: 68ch; font-size: 17px; }
+
+.lineage { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; font: 500 13px/1 var(--mono); margin-top: 4px; }
+.lineage span { padding: 7px 10px; border-radius: 4px; background: var(--chip); color: var(--muted); }
+.lineage span.now { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+.lineage i { font-style: normal; color: var(--muted); }
+
+.media { margin-top: 28px; display: grid; grid-template-columns: 260px minmax(0, 1fr); background: var(--media); }
+.media img { display: block; width: 100%; max-width: 100%; height: 100%; }
+.media .phone { object-fit: contain; padding: 20px 16px; max-height: 480px; }
+.media .art { object-fit: cover; min-height: 280px; max-height: 480px; }
+.media figcaption { display: none; }
+
+.caps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line); margin-top: 28px; }
+.media + .caps { margin-top: 0; }
+.cap { padding: 24px 28px 26px; display: grid; gap: 8px; align-content: start; min-width: 0; border-bottom: 1px solid var(--line); }
+.cap:not(:nth-child(3n+1)) { border-left: 1px solid var(--line); }
+.cap h4 { font: 600 16px/1.3 var(--body); }
+.cap p { font-size: 14.5px; color: var(--muted); }
+.cap .k { font: 500 11px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--accent-2); }
+
+.p-foot { padding: 22px 32px 28px; display: grid; gap: 12px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chips span { font: 400 12.5px/1 var(--mono); padding: 7px 9px; border-radius: 4px; background: var(--chip); }
+.status { font-size: 14px; color: var(--muted); }
+.status b { color: var(--fg); font-weight: 600; }
+
+/* more projects */
+.more { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 40px; border-top: 1px solid var(--line); }
+.more li { display: grid; gap: 6px; padding-block: 20px; border-bottom: 1px solid var(--line); min-width: 0; }
+.more h4 { font: 600 17px/1.3 var(--body); }
+.more p { color: var(--muted); font-size: 15px; }
+.more .tags { font: 400 12.5px/1.5 var(--mono); color: var(--accent-2); }
+
+.coursework { margin-top: 40px; display: grid; gap: 14px; }
+.coursework h3 { font-size: 20px; font-weight: 700; }
+.coursework p { color: var(--muted); max-width: 70ch; }
+.repo-list { display: flex; flex-wrap: wrap; gap: 8px; }
+.repo-list a { font: 400 13px/1 var(--mono); padding: 9px 11px; border: 1px solid var(--line); border-radius: 4px; text-decoration: none; background: var(--surface); }
+.repo-list a:hover { border-color: var(--accent); }
+
+/* creative */
+.creative { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
+.creative div { display: grid; gap: 8px; align-content: start; border-top: 2px solid var(--fg); padding-top: 16px; }
+.creative h4 { font: 700 19px/1.2 var(--display); }
+.creative p { color: var(--muted); font-size: 15px; }
+
+/* skills */
+.skills { display: grid; grid-template-columns: 200px minmax(0, 1fr); border-top: 1px solid var(--line); margin: 0; }
+.skills dt, .skills dd { margin: 0; padding-block: 16px; border-bottom: 1px solid var(--line); }
+.skills dt { font-weight: 600; }
+.skills dd { color: var(--muted); }
+
+/* education */
+.edu { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
+.edu > div { display: grid; gap: 10px; align-content: start; }
+.edu h3 { font-size: 20px; font-weight: 700; }
+.edu p, .edu li { color: var(--muted); font-size: 15px; }
+.edu ul { display: grid; gap: 6px; }
+.pill { justify-self: start; font: 500 11px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; padding: 5px 7px; border-radius: 3px; border: 1px solid var(--line); color: var(--muted); }
+
+/* contact */
+.contact { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 40px; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 32px; align-items: center; }
+.contact h2 { font-size: clamp(30px, 4vw, 44px); font-weight: 800; letter-spacing: -.025em; }
+.contact p { color: var(--muted); margin-top: 12px; max-width: 46ch; }
+.contact-links { display: grid; gap: 14px; }
+.email-row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.email-row code { font: 500 15px/1.4 var(--mono); user-select: all; word-break: break-all; color: var(--fg); }
+#copy-state { font-size: 13px; color: var(--accent-2); min-height: 1.2em; }
+
+footer { margin-top: 64px; padding-block: 28px 40px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 13px; color: var(--muted); }
+
+@media (max-width: 860px) {
+  .hero { grid-template-columns: 1fr; gap: 28px; padding-block: 40px; }
+  .portrait { justify-self: start; max-width: 200px; order: -1; }
+  .figures { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .figures div:nth-child(3) { padding-left: 0; border-left: 0; }
+  .figures div:nth-child(n+3) { border-top: 1px solid var(--line); }
+  .about, .contact { grid-template-columns: 1fr; }
+  .job { grid-template-columns: 1fr; gap: 10px; }
+  .job .when { display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap; }
+  .caps, .more, .creative, .edu { grid-template-columns: 1fr; }
+  .cap:not(:nth-child(3n+1)) { border-left: 0; }
+  .skills { grid-template-columns: 1fr; }
+  .skills dt { border-bottom: 0; padding-bottom: 2px; }
+  .skills dd { padding-top: 0; }
+  .p-head { padding: 24px 20px 0; }
+  .cap, .p-foot { padding: 20px; }
+  .media { grid-template-columns: minmax(0, 1fr); }
+  .media .phone { max-height: 420px; }
+  .media .art { min-height: 0; aspect-ratio: 16 / 9; }
+  .contact { padding: 28px 20px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hero h1, .hero .lede, .portrait { animation: rise .7s cubic-bezier(.2,.7,.2,1) both; }
+  .hero .lede { animation-delay: .08s; }
+  .portrait { animation-delay: .14s; }
+  @keyframes rise { from { transform: translateY(10px); opacity: .01; } to { transform: none; opacity: 1; } }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <a class="mark" href="#top" id="top">Harout Altunyan</a>
+    <nav aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#work">Work</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <div>
+      <div class="who">
+        <span class="label">Co-Founder &amp; CTO, SAECULA</span>
+        <span class="label">Los Angeles, CA</span>
+      </div>
+      <h1>I build AI systems that turn health data into <em>personal care.</em></h1>
+      <p class="lede">Co-founder, CTO and full-stack product architect. I take products from concept through architecture, implementation, testing and deployment, with most of my work in AI-driven health technology and community platforms.</p>
+      <div class="actions">
+        <a class="btn primary" href="#contact">Get in touch</a>
+        <a class="btn" href="https://github.com/HaroutHarryAltunyan" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/haroutyun-altunyan-b631292bb/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <img class="portrait" src="img/harout.jpg" alt="Portrait of Harout Altunyan" width="560" height="560">
+  </div>
+
+  <div class="figures" aria-label="At a glance">
+    <div><b>4,700+</b><span>commits on the SAECULA platform since Aug 2025</span></div>
+    <div><b>4</b><span>SAECULA client apps: patient web, admin web, iOS, Android</span></div>
+    <div><b>16</b><span>backend services designed for HyeLynk</span></div>
+    <div><b>3</b><span>products in production or staged rollout</span></div>
+  </div>
+
+  <section id="about">
+    <div class="sec-head"><h2>About</h2></div>
+    <div class="about">
+      <div class="bio">
+        <p>I'm a founder and engineer who builds whole products: the architecture, the code, the infrastructure and the brand around them.</p>
+        <p>Today I'm Co-Founder and CTO of SAECULA, an AI health and longevity platform. I lead its architecture across web, mobile, backend, AI agents and cloud. Before that I started HyeLynk, a social commerce platform for the Armenian diaspora, which taught me how to design large distributed systems, recommendation feeds, content moderation and blockchain rewards.</p>
+        <p>I came into software through UC Berkeley Extension's full-stack program in 2024 and kept going through independent work in security research, machine learning and distributed systems. I care about privacy and safety by design, and about technology that makes healthcare more human.</p>
+      </div>
+      <dl class="facts">
+        <div><dt>Based in</dt><dd>Los Angeles, California</dd></div>
+        <div><dt>Focus</dt><dd>Health AI, platform architecture, product</dd></div>
+        <div><dt>Languages</dt><dd>English (fluent), Armenian (native)</dd></div>
+        <div><dt>Open to</dt><dd>Engineering leadership, architecture and AI product roles, plus collaborations</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="sec-head"><h2>Experience</h2><span class="label">2023 – present</span></div>
+    <div class="timeline">
+      <article class="job">
+        <div class="when"><b>Aug 2025 – Present</b><span class="now">Current</span></div>
+        <div>
+          <h3>Co-Founder &amp; CTO</h3>
+          <p class="org">SAECULA, formerly Healix and AEVUM Health · <a href="https://saecula.ai" target="_blank" rel="noopener">saecula.ai</a></p>
+          <ul>
+            <li>Set the product vision, roadmap and long-term strategy for an AI-powered health and longevity platform.</li>
+            <li>Lead architecture across patient web, admin web, iOS and Android apps, a Python backend, and 17 shared TypeScript and Python packages.</li>
+            <li>Designed a traceable recommendation engine that links assessment answers to health signals, ingredients, domains and personalized supplement packs.</li>
+            <li>Directed a multi-agent Health AI Operating System with agents for clinical consultation, lab interpretation, nutrition, supplement safety and fitness.</li>
+            <li>Moved production infrastructure to Azure with Bicep, architecture decision records and machine-enforced architecture rules.</li>
+            <li>Led two rebrands, Healix to AEVUM Health and then to SAECULA, covering identity, domains and billing products.</li>
+          </ul>
+        </div>
+      </article>
+      <article class="job">
+        <div class="when"><b>Aug 2026 – Present</b><span class="now">Current</span></div>
+        <div>
+          <h3>Full-Stack Developer, Client Project</h3>
+          <p class="org">Philly on the Block · <a href="https://phillyontheblock.com" target="_blank" rel="noopener">phillyontheblock.com</a></p>
+          <ul>
+            <li>Designed and built the restaurant's online ordering site, table reservations and staff dashboard end to end.</li>
+            <li>Integrated Stripe checkout with add-on options, coupons, stock tracking and configurable fees and tax.</li>
+            <li>Deployed on Cloudflare with a D1 database and a secure one-time setup flow for the admin passcode.</li>
+          </ul>
+        </div>
+      </article>
+      <article class="job">
+        <div class="when"><b>2024 – Present</b></div>
+        <div>
+          <h3>Founder &amp; Lead Architect</h3>
+          <p class="org">HyeLynk · <a href="https://hyelynk.ai" target="_blank" rel="noopener">hyelynk.ai</a></p>
+          <ul>
+            <li>Designed a social commerce and community platform for the Armenian diaspora, combining short video, photos, posts, a storefront and live features.</li>
+            <li>Architected 16 backend services behind API, GraphQL and WebSocket gateways.</li>
+            <li>Built an AI moderation pipeline for NSFW and violence detection, malware scanning and hold-for-review.</li>
+            <li>Designed HyeCoin and ARMcoin community rewards with staking and governance on the Hedera network.</li>
+            <li>Wrote the platform's architecture, security, AI ethics and governance documentation.</li>
+          </ul>
+        </div>
+      </article>
+      <article class="job">
+        <div class="when"><b>2023 – 2024</b></div>
+        <div>
+          <h3>Software Engineer &amp; Security Researcher</h3>
+          <p class="org">Independent projects</p>
+          <ul>
+            <li>Built full-stack apps with React, Node.js, Express, PostgreSQL and MongoDB, including GraphQL and Apollo APIs.</li>
+            <li>Wrote a Sequelize-style SQL abstraction layer for PostgreSQL.</li>
+            <li>Ran penetration tests in a home lab covering SQL injection, XSS, CSRF, SSRF, authentication bypass and privilege escalation.</li>
+            <li>Prototyped on-device media moderation in React Native with TensorFlow Lite.</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="sec-head">
+      <h2>Selected work</h2>
+      <span class="label">Case studies</span>
+    </div>
+
+    <article class="project">
+      <div class="p-head">
+        <div class="meta"><span class="label">Aug 2025 – present</span><span class="label">Health technology</span></div>
+        <h3>SAECULA</h3>
+        <p class="role"><span>Co-Founder &amp; CTO</span><a class="site" href="https://saecula.ai" target="_blank" rel="noopener">saecula.ai ↗</a></p>
+        <p class="desc">An AI-powered health and longevity platform. It combines wellness assessments, lab and biomarker interpretation, wearable data, telemedicine and personalized supplement protocols in one system. I set the product vision and roadmap, and I lead architecture across web, mobile, backend, infrastructure and AI.</p>
+        <div class="lineage" aria-label="Brand history">
+          <span>Healix</span><i>→</i><span>AEVUM Health</span><i>→</i><span class="now">SAECULA</span>
+        </div>
+      </div>
+      <div class="media">
+        <img class="phone" src="img/saecula-app.jpg" alt="SAECULA mobile app home screen showing a health score of 78, sleep, activity, recovery and HRV tiles, the AI coach, and today's plan" width="520" height="924">
+        <img class="art" src="img/saecula-cell.jpg" alt="SAECULA campaign visual: a capsule releasing nutrients into a stylized human cell" width="900" height="507">
+      </div>
+      <div class="caps">
+        <div class="cap">
+          <span class="k">Recommendations</span>
+          <h4>Traceable recommendation engine</h4>
+          <p>Wellness assessments with hundreds of inputs feed multi-domain health scores. Every recommendation traces back through signals, ingredients and domains to the supplement pack it produced.</p>
+        </div>
+        <div class="cap">
+          <span class="k">AI</span>
+          <h4>Health AI Operating System</h4>
+          <p>A multi-agent platform with dedicated agents for clinical consultation, lab interpretation, nutrition planning, supplement safety, fitness programming and health intelligence.</p>
+        </div>
+        <div class="cap">
+          <span class="k">Visualization</span>
+          <h4>Health digital twin</h4>
+          <p>A personal model of each user's health state, presented through interactive 3D body visualization.</p>
+        </div>
+        <div class="cap">
+          <span class="k">Care</span>
+          <h4>Telemedicine</h4>
+          <p>HIPAA-focused video consultation and appointment workflows, built behind privacy, safety and state-level launch controls.</p>
+        </div>
+        <div class="cap">
+          <span class="k">Infrastructure</span>
+          <h4>Production topology on Azure</h4>
+          <p>Infrastructure as code in Bicep, architecture decision records, and machine-enforced architecture rules that stop drift between docs and code.</p>
+        </div>
+        <div class="cap">
+          <span class="k">Release</span>
+          <h4>Gated, staged rollout</h4>
+          <p>A launch scorecard and authorization file decide what ships. Features go live one at a time, from restricted web preview and internal mobile beta toward general availability.</p>
+        </div>
+      </div>
+      <div class="p-foot">
+        <div class="chips" aria-label="Stack">
+          <span>Next.js 16</span><span>React 19</span><span>React Native</span><span>TypeScript</span><span>Python</span><span>FastAPI</span><span>PostgreSQL</span><span>Redis</span><span>Azure · Bicep</span><span>Stripe</span><span>LLM agents</span>
+        </div>
+        <p class="status"><b>Status:</b> pre-launch. The web app is in restricted preview and mobile is heading into internal beta.</p>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="p-head">
+        <div class="meta"><span class="label">2024 – present</span><span class="label">Community · Social commerce</span></div>
+        <h3>HyeLynk</h3>
+        <p class="role"><span>Founder &amp; Lead Architect</span><a class="site" href="https://hyelynk.ai" target="_blank" rel="noopener">hyelynk.ai ↗</a></p>
+        <p class="desc">A social commerce platform built to strengthen Armenian community engagement and connect the diaspora worldwide. It brings short video, photos, posts, a storefront and community rewards together in one app. I designed the platform vision, roadmap, engagement model and service architecture.</p>
+      </div>
+      <div class="caps">
+        <div class="cap">
+          <span class="k">Architecture</span>
+          <h4>Microservice backbone</h4>
+          <p>API and GraphQL gateways, a WebSocket gateway for real-time features, and dedicated user, content and media services.</p>
+        </div>
+        <div class="cap">
+          <span class="k">Trust &amp; safety</span>
+          <h4>AI content moderation</h4>
+          <p>Moderation, vision processing and a safety service that screen posts and images before they reach the community.</p>
+        </div>
+        <div class="cap">
+          <span class="k">Engagement</span>
+          <h4>Feeds and HyeCoin rewards</h4>
+          <p>A Gorse-based recommender ranks the feed, and a HyeCoin rewards service running on the Hedera network tracks community participation.</p>
+        </div>
+      </div>
+      <div class="p-foot">
+        <div class="chips" aria-label="Stack">
+          <span>TypeScript</span><span>Node.js</span><span>React</span><span>React Native</span><span>Python</span><span>GraphQL</span><span>WebSockets</span><span>Gorse</span><span>Hedera</span>
+        </div>
+        <p class="status"><b>Apps:</b> web, mobile, storefront and admin dashboard.</p>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="p-head">
+        <div class="meta"><span class="label">Aug 2026 – present</span><span class="label">Client work · Restaurant</span></div>
+        <h3>Philly on the Block</h3>
+        <p class="role"><span>Full-Stack Developer</span><a class="site" href="https://phillyontheblock.com" target="_blank" rel="noopener">phillyontheblock.com ↗</a><a class="site" href="https://github.com/HaroutHarryAltunyan/Philly-On-The-Block" target="_blank" rel="noopener">source ↗</a></p>
+        <p class="desc">A responsive ordering site for a Philly cheesesteak restaurant, built around its street-sign, mascot and food-truck artwork. Customers order and pay online, track orders and book tables. Staff run the day from a dashboard.</p>
+      </div>
+      <div class="caps">
+        <div class="cap">
+          <span class="k">Ordering</span>
+          <h4>Menu, cart and checkout</h4>
+          <p>Add-on options, sold-out tracking, pickup or delivery, coupon codes, order notes and Stripe payments, with order tracking by phone number.</p>
+        </div>
+        <div class="cap">
+          <span class="k">Operations</span>
+          <h4>Restaurant dashboard</h4>
+          <p>Live orders with payment status, menu and stock management, coupons, reservations, opening hours and configurable fees and tax.</p>
+        </div>
+        <div class="cap">
+          <span class="k">Security</span>
+          <h4>Safe defaults in a public repo</h4>
+          <p>The dev passcode never works in production. Staff set their own through a one-time setup token stored in the database.</p>
+        </div>
+      </div>
+      <div class="p-foot">
+        <div class="chips" aria-label="Stack">
+          <span>Next.js</span><span>React 19</span><span>TypeScript</span><span>Tailwind CSS 4</span><span>Drizzle ORM</span><span>Cloudflare D1</span><span>Stripe</span>
+        </div>
+        <p class="status"><b>Status:</b> live in production.</p>
+      </div>
+    </article>
+  </section>
+
+  <section id="projects">
+    <div class="sec-head"><h2>More projects</h2><span class="label">Research &amp; prototypes</span></div>
+    <ul class="more">
+      <li>
+        <h4>Democratic AI SDK</h4>
+        <p>A TypeScript SDK for transparent, community-governed AI systems, with conformance tests and privacy modules.</p>
+        <span class="tags">TypeScript · AI governance</span>
+      </li>
+      <li>
+        <h4>AI/ML Security Framework</h4>
+        <p>A lifecycle security system for ML models covering bias detection, adversarial testing, differential privacy and encrypted inference.</p>
+        <span class="tags">Python · PyTorch · Privacy</span>
+      </li>
+      <li>
+        <h4>Encrypted Chat Service</h4>
+        <p>A prototype Signal-compatible key server and end-to-end encrypted messaging layer, self-hosted with Docker.</p>
+        <span class="tags">Cryptography · Docker</span>
+      </li>
+      <li>
+        <h4>Emergency Governance Framework</h4>
+        <p>Crisis-governance infrastructure for HyeLynk with sortition tribunals, Hedera consensus and no admin backdoors.</p>
+        <span class="tags">Hedera · Governance</span>
+      </li>
+    </ul>
+
+    <div class="coursework">
+      <h3>UC Berkeley coursework on GitHub</h3>
+      <p>Public projects from the full-stack program, from HTML and CSS through Node, Express, SQL, ORMs and MVC.</p>
+      <div class="repo-list">
+        <a href="https://github.com/HaroutHarryAltunyan/06-TheServerSideAPIweatherDash" target="_blank" rel="noopener">Weather dashboard</a>
+        <a href="https://github.com/HaroutHarryAltunyan/13-TheORmE-ComBackend" target="_blank" rel="noopener">E-commerce back end (ORM)</a>
+        <a href="https://github.com/HaroutHarryAltunyan/14-TheMVCtechBlog" target="_blank" rel="noopener">MVC tech blog</a>
+        <a href="https://github.com/HaroutHarryAltunyan/11-TheExpress.jsNoteTaker" target="_blank" rel="noopener">Express note taker</a>
+        <a href="https://github.com/HaroutHarryAltunyan/09-TheNode.jsReadMeGenerator" target="_blank" rel="noopener">Node README generator</a>
+        <a href="https://github.com/HaroutHarryAltunyan/03-TheEmployeeTrackerJS" target="_blank" rel="noopener">Employee tracker</a>
+        <a href="https://github.com/HaroutHarryAltunyan/05-TheThirdPartyAPItask" target="_blank" rel="noopener">Task board</a>
+        <a href="https://github.com/HaroutHarryAltunyan/17-TheCSforJsRegex" target="_blank" rel="noopener">Regex tutorial</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="creative">
+    <div class="sec-head"><h2>Brand &amp; creative direction</h2></div>
+    <div class="creative">
+      <div>
+        <h4>Rebrand, twice</h4>
+        <p>Led the move from Healix to AEVUM Health and then to SAECULA, covering the wordmark, product names, domains and billing products.</p>
+      </div>
+      <div>
+        <h4>Packaging system</h4>
+        <p>Directed a full collection of supplement capsule pack designs, with ingredient art tied to each formula's actual composition.</p>
+      </div>
+      <div>
+        <h4>Campaign content</h4>
+        <p>Produced AI-assisted ad visuals and short cinematic vertical video spots for social channels and the app stores.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="sec-head"><h2>Skills</h2></div>
+    <dl class="skills">
+      <dt>Languages</dt><dd>TypeScript, JavaScript, Python, SQL, GraphQL, Solidity</dd>
+      <dt>Frontend &amp; mobile</dt><dd>React, Next.js, React Native, Expo, Tailwind CSS, UX/UI design</dd>
+      <dt>Backend</dt><dd>FastAPI, Node.js, Express, Apollo, REST and GraphQL APIs, WebSockets, microservices</dd>
+      <dt>Data</dt><dd>PostgreSQL, MongoDB, Redis, Neo4j, OpenSearch, Cloudflare D1, Drizzle, data modeling</dd>
+      <dt>AI &amp; ML</dt><dd>LLM systems, multi-agent architectures, recommendation engines, health scoring, PyTorch, TensorFlow, Hugging Face</dd>
+      <dt>Cloud &amp; DevOps</dt><dd>Azure (Bicep), AWS, Cloudflare, Docker, Kubernetes, Terraform, GitHub Actions, staged releases</dd>
+      <dt>Security</dt><dd>Zero-trust design, penetration testing, MFA, secrets management, privacy-by-design for health data</dd>
+      <dt>Web3</dt><dd>Hedera, smart contracts, token rewards and governance design</dd>
+      <dt>Product &amp; leadership</dt><dd>Product strategy, roadmaps, startup operations, agile delivery, subscription and retention design, brand direction</dd>
+    </dl>
+  </section>
+
+  <section id="education">
+    <div class="sec-head"><h2>Education</h2></div>
+    <div class="edu">
+      <div>
+        <span class="label">2024</span>
+        <h3>UC Berkeley Extension</h3>
+        <p>Full-Stack Flex Bootcamp. HTML, CSS, JavaScript, Node.js, Express, SQL, ORMs, MVC, NoSQL, React and the MERN stack.</p>
+      </div>
+      <div>
+        <span class="label">Ongoing</span>
+        <h3>Independent study</h3>
+        <ul>
+          <li>Cybersecurity and ethical hacking with Kali Linux</li>
+          <li>Machine learning with PyTorch and TensorFlow</li>
+          <li>Calculus (Spivak), data structures and algorithms</li>
+          <li>Quantum computing basics with Qiskit</li>
+        </ul>
+      </div>
+      <div>
+        <span class="pill">In progress</span>
+        <h3>Certifications</h3>
+        <ul>
+          <li>AWS Solutions Architect Associate</li>
+          <li>CompTIA Security+</li>
+          <li>Certified Kubernetes Administrator</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact">
+      <div>
+        <h2>Let's work together</h2>
+        <p>I'm open to engineering leadership, architecture and AI product roles, and to collaborations in health tech. Email is the fastest way to reach me.</p>
+      </div>
+      <div class="contact-links">
+        <div class="email-row">
+          <code id="email">altunyanharoutyunh93@gmail.com</code>
+          <button class="btn" id="copy-btn" type="button">Copy email</button>
+        </div>
+        <span id="copy-state" aria-live="polite"></span>
+        <div class="actions" style="margin-top:0">
+          <a class="btn" href="https://www.linkedin.com/in/haroutyun-altunyan-b631292bb/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn" href="https://github.com/HaroutHarryAltunyan" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>Harout Altunyan · Los Angeles</span>
+    <span><a href="https://saecula.ai" target="_blank" rel="noopener">saecula.ai</a> · <a href="https://hyelynk.ai" target="_blank" rel="noopener">hyelynk.ai</a></span>
+  </footer>
+</div>
+
+<script>
+document.getElementById('copy-btn').addEventListener('click', function () {
+  var el = document.getElementById('email');
+  var state = document.getElementById('copy-state');
+  function selectIt() {
+    var r = document.createRange(); r.selectNodeContents(el);
+    var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    state.textContent = 'Selected. Press Cmd/Ctrl+C to copy.';
+  }
+  try {
+    navigator.clipboard.writeText(el.textContent).then(function () { state.textContent = 'Copied to clipboard.'; }, selectIt);
+  } catch (e) { selectIt(); }
+});
+</script>
