@@ -37,7 +37,7 @@ export type ArchNode = { id: string; label: string; group: string; status?: Stat
 export type ArchEdge = [from: string, to: string];
 
 export type Venture = {
-  slug: "saecula" | "hyelynk";
+  slug: "saecula" | "hyelynk" | "hedge-fund";
   name: string;
   pronunciation?: string;
   category: string;

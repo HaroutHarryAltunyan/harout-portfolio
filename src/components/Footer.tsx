@@ -28,6 +28,7 @@ const cols = [
       { label: "LinkedIn", href: links.linkedin, ext: true },
       { label: "saecula.ai", href: links.saecula, ext: true },
       { label: "hyelynk.ai", href: links.hyelynk, ext: true },
+      { label: "altunyanaihedgefund.com", href: links.hedgeFund, ext: true },
     ],
   },
 ];

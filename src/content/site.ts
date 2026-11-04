@@ -14,7 +14,7 @@ export const person = {
   positioning: "Building intelligent systems at the intersection of AI, health, and human connection.",
   jobTitle: "Co-Founder & CTO, SAECULA",
   description:
-    "Harout Altunyan is a Los Angeles technology founder and full-stack software engineer. Co-Founder & CTO of SAECULA, an AI health intelligence platform, and founder of HyeLynk, a community social platform.",
+    "Harout Altunyan is a Los Angeles technology founder and full-stack software engineer. Co-Founder & CTO of SAECULA, an AI health intelligence platform, and founder of HyeLynk, a community social platform, and of the Altunyan AI Hedge Fund, an AI-native quantitative research and paper-trading platform.",
 };
 
 export const links = {
@@ -24,6 +24,7 @@ export const links = {
   saecula: "https://saecula.ai",
   // The bare hyelynk.ai domain does not serve HTTPS as of 2026-11-02; www does.
   hyelynk: "https://www.hyelynk.ai",
+  hedgeFund: "https://altunyanaihedgefund.com",
   philly: "https://phillyontheblock.com",
 };
 

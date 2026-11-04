@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { saecula, hyelynk } from "@/content/ventures";
+import { saecula, hyelynk, hedgeFund } from "@/content/ventures";
 import { otherWork } from "@/content/projects";
 import { Chips, Reveal, Section, SectionHead } from "@/components/ui";
 import { img } from "@/lib/asset";
@@ -96,6 +96,70 @@ export function Ventures() {
                 ))}
                 <circle cx="150" cy="150" r="7" fill="#FF681E" />
                 <circle cx="150" cy="150" r="16" fill="none" stroke="#FF681E" strokeOpacity=".5" />
+              </svg>
+            </div>
+          </div>
+        </Reveal>
+
+        {/* Altunyan AI Hedge Fund */}
+        <Reveal as="article" className="group relative overflow-hidden rounded-[32px] border border-line bg-[#06100d]">
+          <div aria-hidden className="absolute inset-0 opacity-80" style={{ background: "radial-gradient(55% 70% at 85% 35%, rgb(52 211 153 / 0.22), transparent 70%), radial-gradient(45% 60% at 5% 95%, rgb(0 123 255 / 0.22), transparent 70%)" }} />
+          <div className="relative grid gap-10 p-7 md:p-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-center">
+            <div>
+              <div className="flex flex-wrap items-center gap-3">
+                <span className="eyebrow text-[#34d399]">03 · Quantitative research</span>
+                <span className="eyebrow">{hedgeFund.period}</span>
+              </div>
+              <h3 className="display mt-6 text-[clamp(36px,8vw,80px)] lg:text-[clamp(52px,5vw,80px)]">Altunyan AI<br />Hedge Fund</h3>
+              <p className="mt-2 font-mono text-xs text-silver">{hedgeFund.category}</p>
+              <p className="mt-6 font-display text-lg text-[#34d399] uppercase md:text-xl">{hedgeFund.tagline}</p>
+              <p className="mt-6 max-w-xl text-lg leading-relaxed text-silver">{hedgeFund.overview[0]}</p>
+              <dl className="mt-8 grid max-w-lg grid-cols-3 gap-4 border-t border-line pt-6">
+                {hedgeFund.metrics.map((m) => (
+                  <div key={m.label} title={m.source} className="flex flex-col-reverse">
+                    <dt className="mt-1 text-xs leading-snug text-silver">{m.label}</dt>
+                    <dd className="font-display text-2xl tabular-nums md:text-3xl">{m.value}</dd>
+                  </div>
+                ))}
+              </dl>
+              <p className="mt-6 max-w-xl text-sm text-silver">{hedgeFund.statusNote}</p>
+              <div className="mt-10 flex flex-wrap gap-3">
+                <a href={hedgeFund.site.href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 font-mono text-[12px] tracking-[0.16em] text-obsidian uppercase">
+                  Visit {hedgeFund.site.label} <ArrowUpRight size={16} />
+                </a>
+              </div>
+            </div>
+            <div aria-hidden className="relative mx-auto w-full max-w-md">
+              {/* Static motif: research proposes, risk and a human gate, paper broker fills. */}
+              <svg viewBox="0 0 320 240" className="w-full">
+                {[40, 80, 120, 160, 200].map((y) => (
+                  <line key={y} x1="0" x2="320" y1={y} y2={y} stroke="#AAB3C5" strokeOpacity=".08" />
+                ))}
+                <path d="M0 170 L30 160 L55 168 L80 140 L105 150 L130 118 L150 126 L175 96 L200 108 L225 80 L250 88 L275 60 L300 70 L320 52" fill="none" stroke="#34d399" strokeWidth="2" className="flow" />
+                <path d="M0 170 L30 160 L55 168 L80 140 L105 150 L130 118 L150 126 L175 96 L200 108 L225 80 L250 88 L275 60 L300 70 L320 52 L320 240 L0 240 Z" fill="url(#hfFill)" />
+                <defs>
+                  <linearGradient id="hfFill" x1="0" x2="0" y1="0" y2="1">
+                    <stop offset="0" stopColor="#34d399" stopOpacity=".22" />
+                    <stop offset="1" stopColor="#34d399" stopOpacity="0" />
+                  </linearGradient>
+                </defs>
+                {[
+                  { x: 20, label: "RESEARCH" },
+                  { x: 100, label: "RISK" },
+                  { x: 180, label: "HUMAN" },
+                  { x: 260, label: "PAPER" },
+                ].map((s, i) => (
+                  <g key={s.label}>
+                    <rect x={s.x} y="200" width="52" height="26" rx="6" fill="#06100d" stroke={i === 1 || i === 2 ? "#34d399" : "#AAB3C5"} strokeOpacity={i === 1 || i === 2 ? 0.9 : 0.35} />
+                    <text x={s.x + 26} y="217" textAnchor="middle" fontSize="8" fontFamily="monospace" fill="#AAB3C5" letterSpacing="1">{s.label}</text>
+                    {i < 3 && <path d={`M${s.x + 54} 213 H${s.x + 78}`} stroke="#AAB3C5" strokeOpacity=".4" markerEnd="url(#hfArrow)" />}
+                  </g>
+                ))}
+                <defs>
+                  <marker id="hfArrow" viewBox="0 0 6 6" refX="5" refY="3" markerWidth="6" markerHeight="6" orient="auto">
+                    <path d="M0 0 L6 3 L0 6 Z" fill="#AAB3C5" fillOpacity=".6" />
+                  </marker>
+                </defs>
               </svg>
             </div>
           </div>

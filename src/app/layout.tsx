@@ -27,6 +27,8 @@ export const metadata: Metadata = {
     "Technology Founder",
     "SAECULA founder",
     "HyeLynk founder",
+    "Altunyan AI Hedge Fund",
+    "AI quantitative research",
     "Los Angeles software engineer",
   ],
   authors: [{ name: person.name, url: SITE_URL }],
@@ -69,9 +71,10 @@ const jsonLd = {
   worksFor: [
     { "@type": "Organization", name: "SAECULA", legalName: "Health Aevum AI Inc.", url: links.saecula },
     { "@type": "Organization", name: "HyeLynk", url: links.hyelynk },
+    { "@type": "Organization", name: "Altunyan AI Hedge Fund", url: links.hedgeFund },
   ],
   alumniOf: { "@type": "CollegeOrUniversity", name: "University of California, Berkeley Extension" },
-  knowsAbout: ["Artificial intelligence", "Health technology", "Software architecture", "Full-stack development", "Cloud infrastructure"],
+  knowsAbout: ["Artificial intelligence", "Health technology", "Software architecture", "Full-stack development", "Cloud infrastructure", "Quantitative research"],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

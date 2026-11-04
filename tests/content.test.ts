@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { ventures, saecula, hyelynk } from "@/content/ventures";
+import { ventures, saecula, hyelynk, hedgeFund } from "@/content/ventures";
 import { archive } from "@/content/projects";
 import { links, person, RESUME_FILE } from "@/content/site";
 import { validate } from "@/lib/contact";
@@ -28,6 +28,11 @@ describe("content accuracy guards", () => {
     const h = hyelynk.capabilities.find((c) => c.id === "hyecoin")!;
     expect(h.status).not.toBe("verified");
     expect(h.summary).toMatch(/not a traded token/i);
+  });
+
+  it("the hedge fund never claims live trading", () => {
+    expect(hedgeFund.capabilities.find((c) => c.id === "live")?.status).toBe("planned");
+    expect(hedgeFund.statusNote).toMatch(/paper trading only/i);
   });
 
   it("architecture edges reference real nodes", () => {

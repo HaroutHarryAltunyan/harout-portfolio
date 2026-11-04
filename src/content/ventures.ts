@@ -308,4 +308,127 @@ export const hyelynk: Venture = {
     "In development. Eight of sixteen designed services have implementation code; the rest are scaffolds. Docker Compose and Kubernetes manifests exist for deployment.",
 };
 
-export const ventures = [saecula, hyelynk];
+export const hedgeFund: Venture = {
+  slug: "hedge-fund",
+  name: "Altunyan AI Hedge Fund",
+  category: "AI-native quantitative research · Paper trading",
+  role: "Founder & Engineer",
+  period: "2026 – Present",
+  tagline: "Intelligence beyond the market.",
+  site: { label: "altunyanaihedgefund.com", href: links.hedgeFund },
+  overview: [
+    "An AI-native research and paper-trading platform that keeps a hard wall between the intelligence that proposes trades and the execution system that is allowed to place them.",
+    "A multi-agent research council, point-in-time market data and walk-forward validation feed strategy pods. Every order passes a deterministic risk engine and a named human approval before it reaches a paper broker.",
+  ],
+  responsibilities:
+    "I designed and built the whole system: data pipelines, research agents, alpha models, risk engine, order management, the web terminal and the Azure deployment.",
+  metrics: [
+    {
+      value: "11",
+      label: "Python services",
+      source: "11 directories under services/ in the ai-hedge-fund repo (risk engine, market data, intelligence, fund, execution, API and others)",
+      checked: "2026-11-03",
+    },
+    {
+      value: "10",
+      label: "research programs, status published",
+      source: "Strategy universe on altunyanaihedgefund.com, read live from the strategy registry",
+      checked: "2026-11-03",
+    },
+    {
+      value: "105",
+      label: "US stocks and ETFs tracked",
+      source: "105-ticker universe defined in services/market-data (README, Known limitations)",
+      checked: "2026-11-03",
+    },
+  ],
+  capabilities: [
+    {
+      id: "council",
+      title: "Multi-agent research council",
+      status: "verified",
+      summary:
+        "Fundamental, technical, sentiment, macro and quant analysts feed a CIO agent that writes a cited thesis. Agents have no broker credentials and cannot submit orders; deterministic models, not LLM confidence, drive sizing.",
+      points: ["LangGraph", "Cited sources with as-of times", "Local model or Claude", "Heuristic fallback"],
+    },
+    {
+      id: "data",
+      title: "Point-in-time data",
+      status: "verified",
+      summary:
+        "Ten years of daily bars, SEC filings by acceptance time, insider trades, short interest, Treasury curve and news. Every record carries the time it became public, so backtests can't see the future.",
+      points: ["Alpaca SIP", "SEC EDGAR", "Form 4", "FINRA", "Fama-French since 1926"],
+    },
+    {
+      id: "validation",
+      title: "Scientific validation",
+      status: "verified",
+      summary:
+        "Walk-forward tests through the same session engine used in paper mode, repeated at 2× costs and compared with equal-weight and SPY benchmarks. Out-of-sample tests so far find no strategy that significantly beats the equal-weight universe, and the site says so.",
+      points: ["Walk-forward", "Purge + embargo", "Locked holdout", "Bootstrap CIs", "Deflated Sharpe"],
+    },
+    {
+      id: "risk",
+      title: "Deterministic risk engine",
+      status: "verified",
+      summary:
+        "Pure functions with final veto over every order: position, sector, leverage, beta, liquidity and correlation limits, daily-loss and drawdown halts, and a fail-closed kill switch only a human can release.",
+      points: ["Property-tested", "No shorting or margin", "Kill switch", "Re-check at submission"],
+    },
+    {
+      id: "execution",
+      title: "Human-approved paper execution",
+      status: "verified",
+      summary:
+        "Approved orders go through an OMS to Alpaca's paper endpoint, unknown outcomes are reconciled before any retry, and positions are rebuilt from an append-only ledger with a hash-chained audit log.",
+      points: ["Named approver", "Alpaca paper", "Reconciliation", "Append-only ledger"],
+    },
+    {
+      id: "live",
+      title: "Live trading",
+      status: "planned",
+      summary: "Not built. Phase 1 is paper trading only, and a LIVE mode does not exist in the code.",
+    },
+  ],
+  stack: [
+    "Python",
+    "FastAPI",
+    "LangGraph",
+    "Next.js 15",
+    "TypeScript",
+    "PostgreSQL · Timescale",
+    "Redis",
+    "Alpaca paper API",
+    "Claude · LM Studio",
+    "Azure Container Apps",
+  ],
+  architecture: {
+    groups: ["Data", "Intelligence", "Execution", "Surfaces"],
+    nodes: [
+      { id: "md", label: "Point-in-time market data", group: "Data" },
+      { id: "council", label: "Research council", group: "Intelligence" },
+      { id: "alpha", label: "Alpha models", group: "Intelligence" },
+      { id: "pods", label: "Strategy pods", group: "Intelligence" },
+      { id: "risk", label: "Deterministic risk engine", group: "Execution" },
+      { id: "human", label: "Human approval", group: "Execution" },
+      { id: "oms", label: "OMS · Alpaca paper", group: "Execution" },
+      { id: "ledger", label: "Ledger + audit chain", group: "Execution" },
+      { id: "web", label: "Next.js terminal", group: "Surfaces" },
+    ],
+    edges: [
+      ["md", "council"],
+      ["md", "alpha"],
+      ["council", "alpha"],
+      ["alpha", "pods"],
+      ["pods", "risk"],
+      ["risk", "human"],
+      ["human", "oms"],
+      ["oms", "ledger"],
+      ["ledger", "web"],
+    ],
+  },
+  statusNote:
+    "Research and paper trading only. No client money, no live orders. Deployed on Azure Container Apps at altunyanaihedgefund.com.",
+};
+
+export const ventures = [saecula, hyelynk, hedgeFund];

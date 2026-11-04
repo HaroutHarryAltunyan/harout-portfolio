@@ -3,7 +3,7 @@ export const about = {
   paragraphs: [
     "I'm Harout Altunyan, a Los Angeles technology founder and software engineer focused on building intelligent, scalable digital products.",
     "My work combines software engineering, artificial intelligence, systems architecture and entrepreneurship. I approach technology from both sides: I develop the vision, design the architecture, implement the systems and guide products through testing and deployment.",
-    "My main areas are AI-powered health technology, digital health intelligence, cross-platform mobile apps, distributed backend systems and community platforms.",
+    "My main areas are AI-powered health technology, digital health intelligence, AI-driven quantitative research, cross-platform mobile apps, distributed backend systems and community platforms.",
   ],
   disciplines: [
     {
@@ -61,6 +61,19 @@ export const experience: Job[] = [
       "Designed a traceable recommendation engine linking assessment answers to signals, ingredients, domains and supplement packs.",
       "Moved production infrastructure to Azure with Bicep, ADRs, machine-enforced architecture rules and a launch scorecard.",
       "Led the rebrands from Healix to AEVUM Health to SAECULA.",
+    ],
+  },
+  {
+    period: "2026 – Present",
+    current: true,
+    title: "Founder & Engineer",
+    org: "Altunyan AI Hedge Fund",
+    href: "https://altunyanaihedgefund.com",
+    points: [
+      "Built an AI-native research and paper-trading platform with a hard wall between the agents that propose trades and the system that executes them.",
+      "Designed a LangGraph research council (fundamental, technical, sentiment, macro, quant → CIO) over point-in-time market, SEC and alternative data.",
+      "Wrote a deterministic, property-tested risk engine with final veto, mandatory human approval, reconciliation before retry and an append-only, hash-chained ledger.",
+      "Validate strategies walk-forward at 2× costs against equal-weight and SPY benchmarks, and publish when they fail. Deployed on Azure Container Apps.",
     ],
   },
   {
@@ -127,7 +140,7 @@ export const journey = [
     phase: "AI systems",
     period: "2025 – Present",
     title: "Intelligence as architecture",
-    body: "LLM applications, AI agents, recommendation engines, health intelligence, digital twins and distributed AI services.",
+    body: "LLM applications, AI agents, recommendation engines, health intelligence, digital twins, AI-driven quantitative research and distributed AI services.",
   },
   {
     phase: "Current work",
@@ -160,8 +173,8 @@ export const focus = [
     accent: "ember",
   },
   {
-    title: "Exploring intelligent systems",
-    body: "Going deeper into AI architectures, autonomous agents, scalable infrastructure and personalized software.",
+    title: "Researching markets with AI",
+    body: "Growing the Altunyan AI Hedge Fund's research and paper-trading platform, where every strategy has to beat its benchmark out of sample and every order passes risk checks and a human.",
     accent: "purple",
   },
 ] as const;
