@@ -1,5 +1,5 @@
 import { philosophy, education, focus } from "@/content/bio";
-import { Chips, Reveal, Section, SectionHead } from "@/components/ui";
+import { Chips, ExtLink, Reveal, Section, SectionHead } from "@/components/ui";
 
 export function Philosophy() {
   return (
@@ -27,6 +27,15 @@ export function Education() {
           <p className="eyebrow text-cyan">{education.program.period}</p>
           <h3 className="mt-4 font-display text-2xl md:text-4xl">{education.program.school}</h3>
           <p className="mt-2 text-lg text-silver">{education.program.detail}</p>
+          <p className="mt-4 text-silver">
+            Certificate: {education.program.certificate.name}, completed {education.program.certificate.completed}.{" "}
+            <ExtLink
+              href={education.program.certificate.verifyUrl}
+              className="font-mono text-[11px] tracking-[0.14em] text-cyan uppercase hover:underline"
+            >
+              View certificate ↗
+            </ExtLink>
+          </p>
           <Chips items={education.program.focus} className="mt-8" />
         </Reveal>
         <Reveal as="article" delay={0.08} className="rounded-[28px] border border-line p-7 md:p-10">

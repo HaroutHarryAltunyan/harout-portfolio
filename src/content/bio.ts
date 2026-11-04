@@ -184,6 +184,11 @@ export const education = {
     school: "University of California, Berkeley",
     detail: "Full Stack Web Development Program (UC Berkeley Extension)",
     period: "2024 – 2025",
+    certificate: {
+      name: "Berkeley Coding Boot Camp",
+      completed: "January 30, 2025",
+      verifyUrl: "https://www.parchment.com/u/s/tI2T",
+    },
     focus: [
       "Full-stack engineering",
       "Frontend development",

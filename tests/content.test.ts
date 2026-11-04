@@ -5,6 +5,7 @@ import { links, person, RESUME_FILE } from "@/content/site";
 import { validate } from "@/lib/contact";
 import { existsSync } from "node:fs";
 import { creative } from "@/content/expertise";
+import { education } from "@/content/bio";
 
 describe("content accuracy guards", () => {
   it("every metric names its source and check date", () => {
@@ -53,6 +54,10 @@ describe("content accuracy guards", () => {
 
   it("the downloadable resume exists", () => {
     expect(existsSync(`public${RESUME_FILE}`)).toBe(true);
+  });
+
+  it("certificate link points at the Parchment credential", () => {
+    expect(education.program.certificate.verifyUrl).toMatch(/^https:\/\/www\.parchment\.com\/u\/s\//);
   });
 
   it("external links are https", () => {
