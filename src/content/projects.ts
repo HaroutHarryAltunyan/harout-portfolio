@@ -137,7 +137,7 @@ export const otherWork: OtherWork[] = [
   },
   {
     name: "OXYLUS",
-    category: "Research platform · In development",
+    category: "OXYLUS Technologies Inc. · CEO/CTO · In development",
     description:
       "Soil-water digital twin for a grapevine pilot in Armenia's Ararat Valley: a Python science engine and FastAPI twin service, a React web research console and an Expo mobile companion. Research only, not validated, synthetic demo data; every model output shows its computed evidence level.",
     stack: ["Python", "FastAPI", "uv", "React 18", "Vite", "TypeScript", "Expo", "React Native"],

@@ -14,7 +14,7 @@ export const person = {
   positioning: "Building intelligent systems at the intersection of AI, health, and human connection.",
   jobTitle: "Co-Founder & CTO, SAECULA",
   description:
-    "Harout Altunyan is a Los Angeles technology founder and full-stack software engineer. Co-Founder & CTO of SAECULA, an AI health intelligence platform, and founder of HyeLynk, a community social platform, and of the Altunyan AI Hedge Fund, an AI-native quantitative research and paper-trading platform. He is also building OXYLUS, a research soil-water digital twin for agriculture.",
+    "Harout Altunyan is a Los Angeles technology founder and full-stack software engineer. Co-Founder & CTO of SAECULA, an AI health intelligence platform, and founder of HyeLynk, a community social platform, and of the Altunyan AI Hedge Fund, an AI-native quantitative research and paper-trading platform. He is also CEO/CTO of OXYLUS Technologies Inc., building OXYLUS, a research soil-water digital twin for agriculture.",
 };
 
 export const links = {

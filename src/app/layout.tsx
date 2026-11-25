@@ -28,6 +28,7 @@ export const metadata: Metadata = {
     "SAECULA founder",
     "HyeLynk founder",
     "Altunyan AI Hedge Fund",
+    "OXYLUS Technologies",
     "AI quantitative research",
     "Los Angeles software engineer",
   ],
