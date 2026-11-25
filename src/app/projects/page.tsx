@@ -30,8 +30,8 @@ export default function ProjectsPage() {
           ))}
         </ul>
       </Section>
-      <Section label="Client work" className="pt-0">
-        <h2 className="display text-3xl uppercase md:text-5xl">Client work</h2>
+      <Section label="Client work and other builds" className="pt-0">
+        <h2 className="display text-3xl uppercase md:text-5xl">Client work &amp; other builds</h2>
         {otherWork.map((w) => (
           <Reveal as="article" key={w.name} className="mt-8 rounded-[28px] border border-line p-7 md:p-10">
             <p className="eyebrow">{w.category}</p>
@@ -39,8 +39,8 @@ export default function ProjectsPage() {
             <p className="mt-3 max-w-2xl text-silver">{w.description}</p>
             <Chips items={w.stack} className="mt-5" />
             <div className="mt-6 flex flex-wrap gap-3">
-              <a href={w.href} target="_blank" rel="noopener noreferrer" className="rounded-full border border-white/25 px-5 py-3 font-mono text-[11px] tracking-[0.16em] uppercase hover:border-white">Live site ↗</a>
-              <a href={w.repo} target="_blank" rel="noopener noreferrer" className="rounded-full border border-white/25 px-5 py-3 font-mono text-[11px] tracking-[0.16em] uppercase hover:border-white">Source ↗</a>
+              {w.href && <a href={w.href} target="_blank" rel="noopener noreferrer" className="rounded-full border border-white/25 px-5 py-3 font-mono text-[11px] tracking-[0.16em] uppercase hover:border-white">Live site ↗</a>}
+              {w.repo ? <a href={w.repo} target="_blank" rel="noopener noreferrer" className="rounded-full border border-white/25 px-5 py-3 font-mono text-[11px] tracking-[0.16em] uppercase hover:border-white">Source ↗</a> : <span className="rounded-full border border-line px-5 py-3 font-mono text-[11px] tracking-[0.16em] text-silver uppercase">Private repo</span>}
             </div>
           </Reveal>
         ))}

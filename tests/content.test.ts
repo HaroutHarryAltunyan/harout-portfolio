@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { ventures, saecula, hyelynk, hedgeFund } from "@/content/ventures";
-import { archive } from "@/content/projects";
+import { archive, otherWork } from "@/content/projects";
 import { links, person, RESUME_FILE } from "@/content/site";
 import { validate } from "@/lib/contact";
 import { existsSync } from "node:fs";
@@ -50,6 +50,17 @@ describe("content accuracy guards", () => {
   it("archive projects list the full set without fake demo links", () => {
     expect(archive).toHaveLength(11);
     for (const p of archive) expect(p.demo).toBeUndefined();
+  });
+
+  it("other work only links live sites and public repos", () => {
+    const oxylus = otherWork.find((w) => w.name === "OXYLUS")!;
+    expect(oxylus.href).toBeUndefined();
+    expect(oxylus.repo).toBeUndefined();
+    expect(oxylus.description).toMatch(/not validated/i);
+    for (const w of otherWork) {
+      if (w.href) expect(w.href).toMatch(/^https:\/\//);
+      if (w.repo) expect(w.repo).toMatch(/^https:\/\/github\.com\//);
+    }
   });
 
   it("the downloadable resume exists", () => {

@@ -107,7 +107,16 @@ export const archive: ArchiveProject[] = [
   },
 ];
 
-export const otherWork = [
+export type OtherWork = {
+  name: string;
+  category: string;
+  description: string;
+  stack: string[];
+  href?: string;
+  repo?: string;
+};
+
+export const otherWork: OtherWork[] = [
   {
     name: "Philly on the Block",
     category: "Client work · Live",
@@ -116,5 +125,22 @@ export const otherWork = [
     stack: ["Next.js", "React 19", "TypeScript", "Tailwind CSS 4", "Drizzle ORM", "Cloudflare D1", "Stripe"],
     href: "https://phillyontheblock.com",
     repo: "https://github.com/HaroutHarryAltunyan/Philly-On-The-Block",
+  },
+  {
+    name: "Der Ohanessian & Associates",
+    category: "Client work · Live",
+    description:
+      "Cinematic marketing site for a Los Angeles accounting, tax and audit firm: procedural Three.js scenes that fall back to static art on low-power devices, a validated contact form and an AI support chat that answers only from the site's own content.",
+    stack: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS 4", "React Three Fiber", "GSAP", "Zod", "Claude API", "Vercel"],
+    href: "https://derohanessianandassociates.com",
+    // Private repository (checked 2026-11-24): labelled, not linked.
+  },
+  {
+    name: "OXYLUS",
+    category: "Research platform · In development",
+    description:
+      "Soil-water digital twin for a grapevine pilot in Armenia's Ararat Valley: a Python science engine and FastAPI twin service, a React web research console and an Expo mobile companion. Research only, not validated, synthetic demo data; every model output shows its computed evidence level.",
+    stack: ["Python", "FastAPI", "uv", "React 18", "Vite", "TypeScript", "Expo", "React Native"],
+    // Not deployed and private repository (checked 2026-11-24): no links.
   },
 ];

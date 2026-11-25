@@ -165,7 +165,7 @@ export function Ventures() {
           </div>
         </Reveal>
 
-        {/* Client work */}
+        {/* Client work & other builds */}
         {otherWork.map((w) => (
           <Reveal as="article" key={w.name} className="grid gap-6 rounded-[28px] border border-line p-7 md:grid-cols-[minmax(0,1fr)_auto] md:items-center md:p-10">
             <div>
@@ -175,8 +175,8 @@ export function Ventures() {
               <Chips items={w.stack} className="mt-5" />
             </div>
             <div className="flex flex-wrap gap-3">
-              <a href={w.href} target="_blank" rel="noopener noreferrer" className="rounded-full border border-white/25 px-5 py-3 font-mono text-[11px] tracking-[0.16em] uppercase hover:border-white">Live site ↗</a>
-              <a href={w.repo} target="_blank" rel="noopener noreferrer" className="rounded-full border border-white/25 px-5 py-3 font-mono text-[11px] tracking-[0.16em] uppercase hover:border-white">Source ↗</a>
+              {w.href && <a href={w.href} target="_blank" rel="noopener noreferrer" className="rounded-full border border-white/25 px-5 py-3 font-mono text-[11px] tracking-[0.16em] uppercase hover:border-white">Live site ↗</a>}
+              {w.repo ? <a href={w.repo} target="_blank" rel="noopener noreferrer" className="rounded-full border border-white/25 px-5 py-3 font-mono text-[11px] tracking-[0.16em] uppercase hover:border-white">Source ↗</a> : <span className="rounded-full border border-line px-5 py-3 font-mono text-[11px] tracking-[0.16em] text-silver uppercase">Private repo</span>}
             </div>
           </Reveal>
         ))}

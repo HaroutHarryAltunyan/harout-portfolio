@@ -89,6 +89,28 @@ export const experience: Job[] = [
     ],
   },
   {
+    period: "Nov 2026 – Present",
+    current: true,
+    title: "Founder & Engineer",
+    org: "OXYLUS",
+    points: [
+      "Building a research soil-water digital twin for a grapevine pilot in the Ararat Valley, Armenia.",
+      "Set up an evidence-gated workflow: model status is computed from sealed test evidence, never declared.",
+      "Built a FastAPI twin service, a React web research console and an Expo mobile companion, all labelled research-only on synthetic data.",
+    ],
+  },
+  {
+    period: "Nov 2026",
+    title: "Full-Stack Developer, client project",
+    org: "Der Ohanessian & Associates",
+    href: "https://derohanessianandassociates.com",
+    points: [
+      "Designed and built the firm's marketing site with procedural Three.js scenes, GSAP scroll motion and tiered fallbacks for low-power devices.",
+      "Added a validated, rate-limited contact form and an AI support chat grounded only in the site's own content.",
+      "Deployed on Vercel at derohanessianandassociates.com.",
+    ],
+  },
+  {
     period: "2024 – Present",
     title: "Founder & Product Architect",
     org: "HyeLynk",
