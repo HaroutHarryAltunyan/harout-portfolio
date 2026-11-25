@@ -94,6 +94,7 @@ export const experience: Job[] = [
     current: true,
     title: "CEO/CTO",
     org: "OXYLUS Technologies Inc.",
+    href: "https://haroutharryaltunyan.github.io/OXYLUS/",
     points: [
       "Building a research soil-water digital twin for a grapevine pilot in the Ararat Valley, Armenia.",
       "Set up an evidence-gated workflow: model status is computed from sealed test evidence, never declared.",

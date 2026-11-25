@@ -54,7 +54,7 @@ describe("content accuracy guards", () => {
 
   it("other work only links live sites and public repos", () => {
     const oxylus = otherWork.find((w) => w.name === "OXYLUS")!;
-    expect(oxylus.href).toBeUndefined();
+    expect(oxylus.href).toBe("https://haroutharryaltunyan.github.io/OXYLUS/");
     expect(oxylus.repo).toBeUndefined();
     expect(oxylus.description).toMatch(/not validated/i);
     for (const w of otherWork) {

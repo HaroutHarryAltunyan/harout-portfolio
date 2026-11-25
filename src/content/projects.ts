@@ -141,6 +141,7 @@ export const otherWork: OtherWork[] = [
     description:
       "Soil-water digital twin for a grapevine pilot in Armenia's Ararat Valley: a Python science engine and FastAPI twin service, a React web research console and an Expo mobile companion. Research only, not validated, synthetic demo data; every model output shows its computed evidence level.",
     stack: ["Python", "FastAPI", "uv", "React 18", "Vite", "TypeScript", "Expo", "React Native"],
-    // Not deployed and private repository (checked 2026-11-24): no links.
+    // Public static snapshot of the web research console on GitHub Pages; repository is private (checked 2026-11-24).
+    href: "https://haroutharryaltunyan.github.io/OXYLUS/",
   },
 ];
