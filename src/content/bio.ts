@@ -89,10 +89,11 @@ export const experience: Job[] = [
     ],
   },
   {
-    period: "Nov 2026 – Present",
+    // Earliest public record: CMS NPPES entry for OXYLUS Technologies Inc., 2026-06-11 (formation date unconfirmed).
+    period: "Jun 2026 – Present",
     current: true,
-    title: "Founder & Engineer",
-    org: "OXYLUS",
+    title: "CEO/CTO",
+    org: "OXYLUS Technologies Inc.",
     points: [
       "Building a research soil-water digital twin for a grapevine pilot in the Ararat Valley, Armenia.",
       "Set up an evidence-gated workflow: model status is computed from sealed test evidence, never declared.",
