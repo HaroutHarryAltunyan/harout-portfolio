@@ -89,8 +89,8 @@ export const experience: Job[] = [
     ],
   },
   {
-    // Earliest public record: CMS NPPES entry for OXYLUS Technologies Inc., 2026-06-11 (formation date unconfirmed).
-    period: "Jun 2026 – Present",
+    // California SOS bizfile: OXYLUS Technologies Inc., entity 4811141, CA stock corporation, initial filing 11/12/2021 (checked 2026-11-24).
+    period: "Nov 2021 – Present",
     current: true,
     title: "CEO/CTO",
     org: "OXYLUS Technologies Inc.",
