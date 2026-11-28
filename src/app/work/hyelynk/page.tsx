@@ -8,7 +8,7 @@ import { Reveal, Section } from "@/components/ui";
 export const metadata: Metadata = {
   title: "HyeLynk case study",
   description:
-    "How Harout Altunyan designed HyeLynk, a social and community commerce platform for the Armenian diaspora: microservices, moderation, real-time messaging and community rewards.",
+    "How Harout Altunyan designed HyeLynk, a social and community commerce platform for the Armenian diaspora: a live beta with encrypted messaging, live media, AI ranking and moderation, and HYE on Hedera.",
   alternates: { canonical: "work/hyelynk/" },
   openGraph: { title: "HyeLynk · Community platform", url: "work/hyelynk/" },
 };
@@ -52,7 +52,7 @@ export default function HyeLynkPage() {
       <Section label="Recommendation intelligence">
         <FeatureHead n={3} cap={cap("recs")} accent="ember" />
         <Reveal className="mt-14">
-          <Pipeline steps={["Content signals", "User interests", "Engagement events", "Gorse processing", "Feed ranking", "Personalized delivery"]} accent="#FF681E" />
+          <Pipeline steps={["Engagement events", "Embeddings", "Candidate models", "Beat the rules holdout?", "Feed + Pulse ranking"]} accent="#FF681E" />
         </Reveal>
       </Section>
 
@@ -63,22 +63,22 @@ export default function HyeLynkPage() {
         </Reveal>
       </Section>
 
-      <Section id="architecture" label="Real-time architecture">
+      <Section id="architecture" label="Messaging, calls and live">
         <FeatureHead n={5} cap={cap("realtime")} accent="ember" />
         <Reveal className="mt-14"><ArchDiagram arch={v.architecture} accent="#FF681E" /></Reveal>
         <Stack items={v.stack} />
       </Section>
 
-      <Section label="HyeCoin and personal AI agents">
+      <Section label="HYE and groups">
         <div className="grid gap-14 lg:grid-cols-2">
           <div>
             <FeatureHead n={6} cap={cap("hyecoin")} accent="ember" />
             <PointList items={cap("hyecoin").points!} />
-            <p className="mt-6 text-sm leading-relaxed text-silver">No token is publicly traded, no financial return is offered, and the rewards system is not live.</p>
+            <p className="mt-6 text-sm leading-relaxed text-silver">This site shows no token price or trading figures, and no financial return is offered.</p>
           </div>
           <div>
-            <FeatureHead n={7} cap={cap("agents")} accent="ember" />
-            <PointList items={cap("agents").points!} />
+            <FeatureHead n={7} cap={cap("groups")} accent="ember" />
+            <PointList items={cap("groups").points!} />
           </div>
         </div>
       </Section>
@@ -87,7 +87,7 @@ export default function HyeLynkPage() {
         <Reveal className="max-w-3xl">
           <p className="font-mono text-[11px] tracking-[0.2em] text-amber uppercase">Feature 08</p>
           <h2 className="display mt-5 text-[clamp(30px,5vw,64px)] uppercase">Cross-platform ecosystem</h2>
-          <p className="mt-5 text-lg leading-relaxed text-silver">One account across web, iOS, Android, the storefront and the admin dashboard, with secure authentication and synced state.</p>
+          <p className="mt-5 text-lg leading-relaxed text-silver">{cap("mobile").summary} One account across web, iOS and Android, with secure authentication and synced state.</p>
         </Reveal>
         <Reveal className="mt-14"><CrossPlatform /></Reveal>
       </Section>

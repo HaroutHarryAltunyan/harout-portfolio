@@ -96,7 +96,7 @@ export function CommerceMock() {
 }
 
 export function CrossPlatform() {
-  const surfaces = ["Web app", "iOS app", "Android app", "Storefront", "Admin dashboard"];
+  const surfaces = ["Web app", "iOS app", "Android app", "Shop", "Admin console"];
   return (
     <div className="relative">
       <svg viewBox="0 0 600 240" className="w-full" aria-hidden>

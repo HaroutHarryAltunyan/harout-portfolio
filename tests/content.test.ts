@@ -25,10 +25,15 @@ describe("content accuracy guards", () => {
     expect(saecula.capabilities.find((c) => c.id === "wearables")?.status).toBe("planned");
   });
 
-  it("HyeLynk never claims an active token or rewards", () => {
+  it("HYE is described without price claims and with its limits", () => {
     const h = hyelynk.capabilities.find((c) => c.id === "hyecoin")!;
-    expect(h.status).not.toBe("verified");
-    expect(h.summary).toMatch(/not a traded token/i);
+    expect(h.summary).toMatch(/not investment advice/i);
+    expect(h.summary).toMatch(/not offered in the iOS app/i);
+    expect(h.summary).not.toMatch(/\$|price|return/i);
+  });
+
+  it("HyeLynk mobile stays in development until the store release", () => {
+    expect(hyelynk.capabilities.find((c) => c.id === "mobile")?.status).toBe("in-development");
   });
 
   it("the hedge fund never claims live trading", () => {

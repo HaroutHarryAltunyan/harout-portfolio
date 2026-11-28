@@ -1,6 +1,6 @@
 # Resume source
 
-`resume.html` is the source of `public/Harout_Altunyan_Resume.pdf` (pages 1-2). Page 3 is the
+`resume.html` is the source of `public/Harout_Altunyan_Resume.pdf` (pages 1-3). The last page is the
 UC Berkeley certificate page carried over from the previous PDF.
 
 ```sh
@@ -12,4 +12,4 @@ uv run --no-project --with pypdf python append-certificate.py resume.pdf previou
 rm resume.pdf previous.pdf
 ```
 
-Keep the resume to two pages before the certificate.
+Keep the resume to three pages before the certificate. `append-certificate.py` takes the last page of the previous PDF. If `~/.cache/uv` is broken (T9 unmounted), prefix `UV_CACHE_DIR=$TMPDIR/uvc`.

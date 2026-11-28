@@ -118,6 +118,24 @@ export type OtherWork = {
 
 export const otherWork: OtherWork[] = [
   {
+    name: "M Tech Autocare",
+    category: "Client work · Live",
+    description:
+      "Website and shop platform for an independent BMW specialist in Burbank: online booking, staff accounts with MFA and role-based access, repair orders and a live workshop board, digital inspections, versioned estimates with customer approval links, invoices, parts inventory, warranty and a customer My Garage portal. Online payments, email and SMS are built but stay off until the shop connects its own accounts.",
+    stack: ["Next.js 15", "React 19", "TypeScript", "PostgreSQL (Neon)", "Drizzle ORM", "Playwright", "Vercel"],
+    // Live production deployment (checked 2026-11-27); repository is private.
+    href: "https://mtech-autocare.vercel.app",
+  },
+  {
+    name: "Altunyan Digital",
+    category: "My studio · Live",
+    description:
+      "Site for Altunyan Digital, my digital engineering studio: a React Three Fiber hero with a no-WebGL fallback, case studies of my products and client work, and a deterministic project estimator. Tested with Playwright and axe against WCAG 2.2 AA.",
+    stack: ["Next.js 16", "React 19", "TypeScript", "React Three Fiber", "Three.js", "Tailwind CSS", "Playwright", "Vercel"],
+    // Live on Vercel (checked 2026-11-27); repository is private.
+    href: "https://altunyan-digital.vercel.app",
+  },
+  {
     name: "Philly on the Block",
     category: "Client work · Live",
     description:

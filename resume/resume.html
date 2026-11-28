@@ -32,17 +32,17 @@ li { margin: 1px 0; break-inside: avoid; }
 <div class="contact">Los Angeles, CA<span class="sep">|</span>altunyanharoutyunh93@gmail.com<span class="sep">|</span>linkedin.com/in/haroutyun-altunyan-b631292bb<span class="sep">|</span><br>github.com/HaroutHarryAltunyan<span class="sep">|</span>haroutharryaltunyan.github.io/harout-portfolio</div>
 
 <h2>Professional Summary</h2>
-<p>Technology founder and full-stack engineer who takes products from concept to production. Co-Founder and CTO of SAECULA, an AI health intelligence platform where I lead architecture across web, iOS, Android, a Python backend, AI agents and Azure infrastructure, with 4,600+ commits authored since August 2025. CEO/CTO of OXYLUS Technologies Inc., building an evidence-gated agricultural digital twin. Founder of HyeLynk, a community social commerce platform for the Armenian diaspora, and of the Altunyan AI Hedge Fund, an AI-native quantitative research and paper-trading platform. Works across product strategy, system architecture, frontend, backend, AI integration, security and release engineering, with privacy and safety designed in from the start.</p>
+<p>Technology founder and full-stack engineer who takes products from concept to production. Co-Founder and CTO of SAECULA, an AI health intelligence platform where I lead architecture across web, iOS, Android, a Python backend, AI agents and Azure infrastructure, with 4,600+ commits authored since August 2025. CEO/CTO of OXYLUS Technologies Inc., building an evidence-gated agricultural digital twin. Founder of HyeLynk, a social and community commerce platform for the Armenian diaspora now live in invite-only beta, of the Altunyan AI Hedge Fund, an AI-native quantitative research and paper-trading platform, and of Altunyan Digital, a studio that builds websites and software platforms for clients. Works across product strategy, system architecture, frontend, backend, AI integration, security and release engineering, with privacy and safety designed in from the start.</p>
 
 <h2>Technical Skills</h2>
 <div class="skills">
 <p><b>Languages:</b> TypeScript, JavaScript, Python, SQL, GraphQL</p>
-<p><b>Frontend &amp; mobile:</b> React 19, Next.js 16, React Native (iOS &amp; Android), Expo, Vite, Tailwind CSS, Three.js / React Three Fiber, GSAP, UX/UI design</p>
-<p><b>Backend:</b> FastAPI, Fastify, Node.js, Express, REST and GraphQL APIs, WebSockets, microservices</p>
-<p><b>Data:</b> PostgreSQL, Redis, MongoDB, Cloudflare D1, Drizzle ORM, data modeling</p>
+<p><b>Frontend &amp; mobile:</b> React 19, Next.js 15/16, React Native (iOS &amp; Android), Expo, Vite, Tailwind CSS, Three.js / React Three Fiber, GSAP, UX/UI design</p>
+<p><b>Backend:</b> FastAPI, Fastify, Node.js, Express, REST and GraphQL APIs, WebSockets, Server-Sent Events, microservices</p>
+<p><b>Data:</b> PostgreSQL, Redis, MongoDB, Neon, Cloudflare D1, Drizzle ORM, data modeling, migrations</p>
 <p><b>AI &amp; ML:</b> LLM applications (Claude API), multi-agent systems (LangGraph), recommendation engines, health scoring, quantitative research and backtesting, scientific modeling and verification, PyTorch, TensorFlow</p>
-<p><b>Cloud &amp; DevOps:</b> Azure (Bicep IaC), AWS, Cloudflare, Vercel, Docker, Kubernetes, GitHub Actions CI/CD, staged releases</p>
-<p><b>Security:</b> RBAC, MFA, CSRF and rate-limit guards, privacy by design for health data, penetration testing</p>
+<p><b>Cloud &amp; DevOps:</b> Azure (Container Apps, Bicep IaC), AWS, Cloudflare, Vercel, Docker, Kubernetes, GitHub Actions CI/CD, Playwright, staged releases, App Store Connect</p>
+<p><b>Security:</b> RBAC, MFA (TOTP), step-up auth, append-only audit logs, end-to-end encryption, hardware-wallet signing, CSRF and rate-limit guards, privacy by design for health data, penetration testing</p>
 <p><b>Product:</b> Product strategy, roadmaps, subscription design, launch governance, brand and packaging direction</p>
 </div>
 
@@ -67,11 +67,13 @@ li { margin: 1px 0; break-inside: avoid; }
 <div class="row"><span class="role">Founder &amp; Product Architect</span><span class="date">2024 – Present</span></div>
 <div class="row"><span class="org">HyeLynk · <a href="https://www.hyelynk.ai">hyelynk.ai</a></span><span class="loc">Los Angeles, CA</span></div>
 <ul>
-<li>Designed a social and community commerce platform for the Armenian diaspora with feeds, stories, reels, messaging, a storefront and an admin dashboard.</li>
-<li>Prototyped Instagram-, Threads- and X-style social clients in React Native to define the feed, profile and social-graph experience before committing to the production architecture.</li>
-<li>Architected 16 backend services behind API, GraphQL and WebSocket gateways; built user, content, media, AI orchestration, vision processing and blockchain services in TypeScript and Python.</li>
-<li>Built an AI content moderation pipeline (image and text analysis, safety classification, human review) and a Hedera SDK service for a planned community rewards program.</li>
-<li>Containerized services with Docker Compose and Kubernetes manifests; wrote architecture, security and AI ethics documentation.</li>
+<li>Built and launched a social and community commerce platform for the Armenian diaspora, live as an invite-only beta at www.hyelynk.ai: feeds, stories, reels, messaging, groups, pages, events, a Marketplace, a shop and self-serve ads.</li>
+<li>Architected a Fastify 5 API, a Next.js 15 web app and an Expo / React Native app for iOS and Android over PostgreSQL, deployed on Azure Container Apps with Bicep; 2,300+ commits and 610 merged pull requests.</li>
+<li>Shipped end-to-end encrypted messaging on standard algorithms, plus calls, Spaces and live streams on a self-hosted LiveKit media server.</li>
+<li>Built AI feed and Pulse ranking with embeddings, a Python ranker service and a rules holdout, so models only take over when they beat the baseline; added a Python moderation service with community and human review.</li>
+<li>Launched HYE, a community token on Hedera mainnet, with tipping, Marketplace payments and self-custody withdrawals, signed by Ledger (WebHID) and Citadel (WebUSB) hardware wallets in the browser.</li>
+<li>Hardened operations with step-up authentication, an audited admin console, a self-benefit block on admin actions and a central pause for all money movement.</li>
+<li>Took the iOS app through App Store Connect: in-app subscriptions, App Store server notifications, privacy labels, export-compliance classification for encryption and App Review.</li>
 </ul></div>
 
 <div class="job">
@@ -81,7 +83,7 @@ li { margin: 1px 0; break-inside: avoid; }
 <li>Built an AI-native research and paper-trading platform (11 Python services, FastAPI, Next.js 15 terminal) with a hard wall between the agents that propose trades and the system allowed to execute them.</li>
 <li>Designed a LangGraph research council (fundamental, technical, sentiment, macro and quant analysts feeding a CIO agent) over point-in-time market, SEC EDGAR, insider, short-interest and news data.</li>
 <li>Wrote a deterministic, property-tested risk engine with final veto, mandatory named human approval, reconcile-before-retry order handling and an append-only, hash-chained ledger and audit log.</li>
-<li>Validate strategies walk-forward at 2× costs against equal-weight and SPY benchmarks and publish the failures; deployed on Azure Container Apps. Paper trading only.</li>
+<li>Validate strategies walk-forward at 2× costs against equal-weight and SPY benchmarks and publish the failures. Paper trading only; the public site is a static snapshot on Azure Static Web Apps while the back end is offline.</li>
 </ul></div>
 
 <div class="job">
@@ -94,11 +96,37 @@ li { margin: 1px 0; break-inside: avoid; }
 </ul></div>
 
 <div class="job">
+<div class="row"><span class="role">Founder</span><span class="date">Nov 2026 – Present</span></div>
+<div class="row"><span class="org">Altunyan Digital · <a href="https://altunyan-digital.vercel.app">altunyan-digital.vercel.app</a></span><span class="loc">Los Angeles, CA</span></div>
+<ul>
+<li>Started a digital engineering studio that designs, builds and runs websites and software platforms for small businesses and founders.</li>
+<li>Built the studio site in Next.js 16 with a React Three Fiber hero and static fallback, case studies and a deterministic project estimator; tested with Playwright and axe against WCAG 2.2 AA; deployed on Vercel.</li>
+</ul></div>
+
+<div class="job">
+<div class="row"><span class="role">Lead Engineer (Client Project)</span><span class="date">Nov 2026</span></div>
+<div class="row"><span class="org">M Tech Autocare · <a href="https://mtech-autocare.vercel.app">mtech-autocare.vercel.app</a></span><span class="loc">Burbank, CA</span></div>
+<ul>
+<li>Built the website and shop platform for an independent BMW specialist in twelve phases, live on Vercel with Neon PostgreSQL and Drizzle migrations applied behind database backup branches.</li>
+<li>Staff platform: TOTP MFA, ten-role access control, an append-only audit log, repair orders, a live workshop board over Server-Sent Events, check-in/checkout and a technician workspace.</li>
+<li>Service workflow: digital inspections, scan-tool diagnostics with NHTSA VIN and recall lookups, versioned estimates in integer cents with customer approval links, invoices, refunds, parts inventory, purchase orders, warranty and QC.</li>
+<li>Customer side: online booking and a My Garage portal; Stripe checkout, email and SMS are built and switched off until the shop connects its own accounts. Covered by unit tests and Playwright end-to-end tests.</li>
+</ul></div>
+
+<div class="job">
 <div class="row"><span class="role">Full-Stack Developer (Client Project)</span><span class="date">Nov 2026</span></div>
 <div class="row"><span class="org">Der Ohanessian &amp; Associates · <a href="https://derohanessianandassociates.com">derohanessianandassociates.com</a></span><span class="loc">Los Angeles, CA</span></div>
 <ul>
 <li>Designed and built the accounting firm's marketing site in Next.js 16 and React 19 with procedural Three.js scenes, GSAP scroll motion and tiered fallbacks for low-power devices; deployed on Vercel.</li>
 <li>Added a validated, rate-limited contact form and an AI support chat (Claude API) grounded only in the site's own content.</li>
+</ul></div>
+
+<div class="job">
+<div class="row"><span class="role">Full-Stack Developer (Client Project)</span><span class="date">Aug 2026 – Present</span></div>
+<div class="row"><span class="org">Philly on the Block · <a href="https://phillyontheblock.com">phillyontheblock.com</a></span><span class="loc">Los Angeles, CA</span></div>
+<ul>
+<li>Built the restaurant's online ordering, table reservations and staff dashboard end to end in Next.js with Drizzle ORM on Cloudflare D1.</li>
+<li>Integrated Stripe checkout with add-ons, coupons, stock tracking and configurable fees and tax; added a one-time setup flow for the admin passcode.</li>
 </ul></div>
 
 <div class="job">
@@ -111,6 +139,8 @@ li { margin: 1px 0; break-inside: avoid; }
 </ul></div>
 
 <h2>Selected Projects</h2>
+<div class="proj"><p class="h">OXYLUS 3D earth twin · <span>Three.js, NASA GIBS, terrain tiles, GitHub Pages</span></p>
+<p>Public 3D globe for the OXYLUS research console with a CC0 NASA GIBS basemap and open terrain, browser-direct layers only and licence-checked data sources.</p></div>
 <div class="proj"><p class="h">Cinematic personal portfolio · <span>Next.js 16, React 19, Three.js / React Three Fiber, Tailwind 4, GitHub Actions</span></p>
 <p>Static site with interactive 3D scenes, case studies and typed content files; CI runs type checks, lint and content-accuracy tests before every deploy. Lighthouse 100 SEO and best practices.</p></div>
 <div class="proj"><p class="h">SAECULA supplement packaging system · <span>AI image generation, OCR verification, WebP pipeline</span></p>
@@ -124,6 +154,7 @@ li { margin: 1px 0; break-inside: avoid; }
 <div class="job" style="margin-top:3px">
 <div class="row"><span class="role">University of California, Berkeley Extension</span><span class="date">2024 – 2025</span></div>
 <p class="org">Full Stack Web Development Program</p>
+<p>Certificate: Berkeley Coding Boot Camp, completed January 30, 2025 · verify at <a href="https://www.parchment.com/u/s/tI2T" style="text-decoration:underline">parchment.com/u/s/tI2T</a> (copy attached as the last page)</p>
 <p>Coursework: HTML, CSS, JavaScript, Web APIs, Node.js, Express, SQL, ORMs, MVC, NoSQL, PWAs, React, MERN, GraphQL, deployment</p>
 <p style="margin-top:3px">Self-directed study in machine learning (PyTorch, TensorFlow), cybersecurity and ethical hacking, distributed systems, cloud architecture and mathematics.</p>
 </div>

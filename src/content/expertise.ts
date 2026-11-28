@@ -17,7 +17,7 @@ export const lab = {
       id: "recs",
       title: "Recommendation systems",
       items: ["Collaborative filtering", "Content-based filtering", "Vector similarity", "Ranking", "Signal aggregation", "Evaluation"],
-      body: "Every SAECULA recommendation can be traced from assessment question to signal to ingredient to pack. HyeLynk's feed ranking is designed around Gorse.",
+      body: "Every SAECULA recommendation can be traced from assessment question to signal to ingredient to pack. HyeLynk's feed and Pulse rankers only replace the rules when they beat them on a holdout.",
     },
     {
       id: "twin",
@@ -82,7 +82,7 @@ export const architecture = {
       id: "cloud",
       label: "Cloud",
       tech: ["Azure", "AWS", "Docker", "Kubernetes", "Infrastructure as code"],
-      body: "SAECULA production is defined in Bicep on Azure. HyeLynk ships with Docker Compose and Kubernetes manifests.",
+      body: "SAECULA production is defined in Bicep on Azure. HyeLynk runs on Azure Container Apps, also defined in Bicep.",
       layers: ["Bicep / Terraform", "Container runtime", "Managed databases", "Secrets & identity"],
     },
     {

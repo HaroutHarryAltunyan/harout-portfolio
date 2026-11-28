@@ -73,7 +73,29 @@ export const experience: Job[] = [
       "Built an AI-native research and paper-trading platform with a hard wall between the agents that propose trades and the system that executes them.",
       "Designed a LangGraph research council (fundamental, technical, sentiment, macro, quant → CIO) over point-in-time market, SEC and alternative data.",
       "Wrote a deterministic, property-tested risk engine with final veto, mandatory human approval, reconciliation before retry and an append-only, hash-chained ledger.",
-      "Validate strategies walk-forward at 2× costs against equal-weight and SPY benchmarks, and publish when they fail. Deployed on Azure Container Apps.",
+      "Validate strategies walk-forward at 2× costs against equal-weight and SPY benchmarks, and publish when they fail.",
+    ],
+  },
+  {
+    period: "Nov 2026 – Present",
+    current: true,
+    title: "Founder",
+    org: "Altunyan Digital",
+    href: "https://altunyan-digital.vercel.app",
+    points: [
+      "Started a digital engineering studio that designs, builds and runs websites and software platforms for clients.",
+      "Built the studio site: a React Three Fiber hero with a static fallback, case studies and a deterministic project estimator, tested against WCAG 2.2 AA.",
+    ],
+  },
+  {
+    period: "Nov 2026",
+    title: "Lead Engineer, client project",
+    org: "M Tech Autocare",
+    href: "https://mtech-autocare.vercel.app",
+    points: [
+      "Built the website and a shop platform for an independent BMW specialist in Burbank, delivered in twelve phases and live on Vercel with Neon PostgreSQL.",
+      "Staff side: MFA, role-based access, an append-only audit log, repair orders, a live workshop board, inspections, versioned estimates, invoices, parts inventory and warranty.",
+      "Customer side: online booking, estimate approval links and a My Garage portal. Payments and messaging are built and switched off until the shop connects its own accounts.",
     ],
   },
   {
@@ -118,9 +140,9 @@ export const experience: Job[] = [
     org: "HyeLynk",
     href: "https://www.hyelynk.ai",
     points: [
-      "Designed a social and community commerce platform for the Armenian diaspora.",
-      "Architected 16 backend services; 8 have implementation code today.",
-      "Built content moderation, media processing and a Hedera-based blockchain service.",
+      "Built and launched a social and community commerce platform for the Armenian diaspora, live as an invite-only beta at www.hyelynk.ai.",
+      "Fastify 5 API, Next.js 15 web and an Expo app for iOS and Android, on Azure Container Apps with Bicep; 2,300+ commits and 610 merged pull requests.",
+      "Shipped encrypted messaging, calls and live streams on LiveKit, AI feed ranking and moderation, and HYE on Hedera mainnet with Ledger and Citadel hardware signing.",
     ],
   },
   {
@@ -193,7 +215,7 @@ export const focus = [
   },
   {
     title: "Connecting communities",
-    body: "Building HyeLynk's cross-platform social and community experience.",
+    body: "Growing HyeLynk's invite-only beta and bringing the iOS and Android apps through store release.",
     accent: "ember",
   },
   {
